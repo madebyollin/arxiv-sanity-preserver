@@ -9,10 +9,11 @@ from random import shuffle, seed
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+import console
 from utils import Config, safe_pickle_dump
 
 seed(1337)
-max_train = 5000 # max number of tfidf training documents (chosen randomly), for memory efficiency
+max_train = 500 # max number of tfidf training documents (chosen randomly), for memory efficiency
 max_features = 5000
 
 # read database
@@ -33,7 +34,7 @@ for pid,j in db.items():
       pids.append(idvv)
       print("read %d/%d (%s) with %d chars" % (n, len(db), idvv, len(txt)))
     else:
-      print("skipped %d/%d (%s) with %d chars: suspicious!" % (n, len(db), idvv, len(txt)))
+      console.warn("skipped %d/%d (%s) with %d chars: suspicious!" % (n, len(db), idvv, len(txt)))
   else:
     print("could not find %s in txt folder." % (txt_path, ))
 print("in total read in %d text files out of %d db entries." % (len(txt_paths), len(db)))
@@ -60,11 +61,13 @@ shuffle(train_txt_paths) # shuffle
 train_txt_paths = train_txt_paths[:min(len(train_txt_paths), max_train)] # crop
 print("training on %d documents..." % (len(train_txt_paths), ))
 train_corpus = make_corpus(train_txt_paths)
+print("created corpus")
 v.fit(train_corpus)
 
 # transform
 print("transforming %d documents..." % (len(txt_paths), ))
 corpus = make_corpus(txt_paths)
+print("created corpus")
 X = v.transform(corpus)
 print(v.vocabulary_)
 print(X.shape)
