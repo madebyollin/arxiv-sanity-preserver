@@ -11,10 +11,10 @@ timeout_secs = 10 # after this many seconds we give up on a paper
 if not os.path.exists(Config.pdf_dir): os.makedirs(Config.pdf_dir)
 have = set(os.listdir(Config.pdf_dir)) # get list of all pdfs we already have
 
-numok = 0
-numtot = 0
+num_ok = 0
+num_total = 0
 db = pickle.load(open(Config.db_path, 'rb'))
-for pid,j in db.items():
+for pid, j in db.items():
   
   pdfs = [x['href'] for x in j['links'] if x['type'] == 'application/pdf']
   assert len(pdfs) == 1
@@ -23,7 +23,7 @@ for pid,j in db.items():
   fname = os.path.join(Config.pdf_dir, basename)
 
   # try retrieve the pdf
-  numtot += 1
+  num_total += 1
   try:
     if not basename in have:
       print('fetching %s into %s' % (pdf_url, fname))
@@ -33,12 +33,12 @@ for pid,j in db.items():
       time.sleep(0.05 + random.uniform(0,0.1))
     else:
       print('%s exists, skipping' % (fname, ))
-    numok+=1
+    num_ok += 1
   except Exception as e:
     print('error downloading: ', pdf_url)
     print(e)
   
-  print('%d/%d of %d downloaded ok.' % (numok, numtot, len(db)))
+  print('%d/%d of %d downloaded ok.' % (num_ok, num_total, len(db)))
   
-print('final number of papers downloaded okay: %d/%d' % (numok, len(db)))
+print('Final number of papers downloaded okay: %d/%d' % (num_ok, len(db)))
 
