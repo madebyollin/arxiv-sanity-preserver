@@ -459,3 +459,239 @@ ul.flashes li {
   padding: 2px;
   font-size: 14px;
 }
+
+/* Lazy copy-paste of my user style sheet;
+ * should be properly incorporated later */
+
+body {
+    background-color: white;
+    font-family: Times;
+}
+
+#maindiv, #recommend-time-choice, #pagebar {
+    border: 0;
+}
+
+#rtable {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+#qfield {
+    border-radius: 32px;
+    border: 0;
+    background-image: none;
+    font-family: Latin Modern Roman;
+    padding-top: 0px;
+    padding-bottom: 6px;
+    box-shadow: 0px 4px 16px -8px rgba(0,0,0,0.5), 0px 0px 2px -1px black;
+}
+
+a[href="/logout"] {
+    background: rgb(255,64,96) !important;
+}
+
+.tt {
+    font-family: Latin Modern Roman;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.paperdesc br {
+    display: none;
+}
+
+.paperdesc>span {
+    display: inline-block;
+    margin-right: 8px;
+}
+.paperdesc {
+    font-family: Latin Modern Roman;
+    padding-bottom:8px;
+}
+
+.ts {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: Latin Modern Roman;
+    margin: 0 !important;
+    display: block !important;
+}
+
+.vchoice {
+    display: none;
+}
+
+.sim {
+    border: 0 !important;
+}
+
+#tittxt, #tittxt a {
+    visibility: hidden;
+    padding: 0;
+    margin: 0;
+    top: 0;
+}
+
+.save-icon {
+    padding: 8px;
+    vertical-align: middle;
+    margin-left: 16px;
+    padding-top:0px;
+    padding-bottom: 8px;
+}
+
+.dllinks {
+    width: 100%;
+    float: none;
+    text-align: left;
+    margin-left:-16px;
+    margin-bottom:8px;
+    display: block;
+}
+
+.dllinks>br {
+    display: none;
+}
+.dllinks>a, .dllinks>span {
+    text-decoration: none;
+    padding: 8px 16px !important;
+    text-align: center;
+    border-radius: 16px;
+    background: #f0f0f0;
+    display: inline-block;
+    margin-left: 8px !important;
+    margin-right: 0px !important;
+    color: black;
+    transition: 0.1s ease transform;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+}
+
+.dllinks>a:hover, .dllinks>span:hover {
+    transform: scale(1.1);
+}
+
+.dllinks>span>a {
+    padding: 0;
+    text-decoration: none;
+
+}
+
+.as {
+    color: black !important;
+}
+
+#tittxt:before {
+    position: absolute;
+    top: 0px;
+    content: "arXiv sanity";
+    color: white;
+    font-variant: small-caps;
+    visibility: visible;
+    font-size: 1.6rem;
+    font-family: Latin Modern Roman;
+    font-weight: light;
+    padding: 4px 8px
+}
+body > a > img, #banner {
+    display: none;
+}
+
+#titdiv {
+    background: black;
+    height: 2.0em;
+}
+
+.msg {
+    background: transparent;
+    padding: 0;
+    display: none;
+}
+#flashesdiv, .flashes, #flashesdiv li {
+    display: none;
+}
+
+#pagebar {
+    background: none;
+}
+
+.fdivider {
+    display: none;
+}
+
+.pagelink {
+    border: none;
+    font-variant: small-caps;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    background: none;
+    cursor: pointer;
+    transition: 0.1s ease transform;
+}
+.pagelink a {
+    color: black!important;
+}
+
+.pagelink:hover {
+    transform: scale(1.1);
+}
+.pagelink.tab-selected {
+    background: #2080ff;
+    border-radius: 24px;
+}
+
+.pagelink.tab-selected a {
+    color: white !important;
+}
+
+#recommend-time-choice {
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+#recommend-time-choice a div {
+    color: black !important;
+    font-variant: small-caps;
+    background: transparent !important;
+    padding: 8px 16px;
+    text-transform: lowercase;
+    transition: 0.1s ease transform;
+}
+
+#recommend-time-choice a div:hover {
+    transform: scale(1.1);
+}
+
+#recommend-time-choice a div.timechoice-selected {
+    background: #2080ff !important;
+    border-radius: 24px !important;
+    color: white !important;
+}
+
+span.tt {
+    background: transparent;
+}
+#userinfo {
+    padding: 8px;
+
+}
+
+#userinfo a:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+#userinfo a {
+    display: inline-block;
+    user-select: none;
+    margin-top: -8px;
+    margin-left: 8px;
+    border:0;
+    background: #404040;
+    padding: 4px 16px;
+    transition: 0.1s ease transform;
+    border-radius: 16px;
+}
