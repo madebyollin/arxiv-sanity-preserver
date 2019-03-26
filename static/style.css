@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'LMR';
+    src: local('☺'), url('lmroman10-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -481,7 +488,7 @@ body {
     border-radius: 32px;
     border: 0;
     background-image: none;
-    font-family: Latin Modern Roman;
+    font-family: 'LMR';
     padding-top: 0px;
     padding-bottom: 6px;
     box-shadow: 0px 4px 16px -8px rgba(0,0,0,0.5), 0px 0px 2px -1px black;
@@ -492,7 +499,7 @@ a[href="/logout"] {
 }
 
 .tt {
-    font-family: Latin Modern Roman;
+    font-family: 'LMR';
     text-align: left;
     font-size: 1.1rem;
     line-height: 1.4;
@@ -507,14 +514,14 @@ a[href="/logout"] {
     margin-right: 8px;
 }
 .paperdesc {
-    font-family: Latin Modern Roman;
+    font-family: 'LMR';
     padding-bottom:8px;
 }
 
 .ts {
     font-size: 1.3rem;
     font-weight: 600;
-    font-family: Latin Modern Roman;
+    font-family: 'LMR';
     margin: 0 !important;
     display: block !important;
 }
@@ -592,7 +599,7 @@ a[href="/logout"] {
     font-variant: small-caps;
     visibility: visible;
     font-size: 1.6rem;
-    font-family: Latin Modern Roman;
+    font-family: 'LMR';
     font-weight: light;
     padding: 4px 8px
 }
