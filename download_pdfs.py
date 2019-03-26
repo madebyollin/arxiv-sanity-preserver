@@ -31,9 +31,9 @@ for pid, j in db.items():
             with open(fname, 'wb') as fp:
                 shutil.copyfileobj(req, fp)
             time.sleep(0.05 + random.uniform(0, 0.1))
-    else:
-        console.info('%s exists, skipping' % (fname, ))
-        num_ok += 1
+        else:
+            console.info('%s exists, skipping' % (fname, ))
+            num_ok += 1
     except Exception as e:
         console.warn('error downloading: ', pdf_url)
         console.log(e)
