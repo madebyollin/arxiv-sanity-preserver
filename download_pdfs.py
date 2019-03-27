@@ -19,6 +19,7 @@ for pid, j in db.items():
     pdfs = [x['href'] for x in j['links'] if x['type'] == 'application/pdf']
     assert len(pdfs) == 1
     pdf_url = pdfs[0] + '.pdf'
+    pdf_url = pdf_url.replace("http:","https:") # ??
     basename = pdf_url.split('/')[-1]
     fname = os.path.join(Config.pdf_dir, basename)
 

@@ -58,7 +58,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # misc hardcoded variables
-    base_url = 'http://export.arxiv.org/api/query?' # base api query url
+    base_url = 'https://export.arxiv.org/api/query?' # base api query url
     print('Searching arXiv for %s' % (args.search_query, ))
 
     # lets load the existing database to memory
