@@ -54,7 +54,7 @@ process_pdf() {
        cp "$missing_thumb_path" "$thumb_path" 
     else
         # conversion succeeded, make a montage
-        montage -mode concatenate -quality 80 -tile x1 "${tmp_thumb_path}-"*.png "$thumb_path"
+        montage -mode concatenate -quality 80 -tile x1 ${tmp_thumb_path}-*.png "$thumb_path"
         # echo "Made thumbnail for $pdf_path"
         # echo "$(count_files $thumbs_dir)/$total_files"
     fi
