@@ -704,10 +704,14 @@ if __name__ == "__main__":
     from tornado.httpserver import HTTPServer
     from tornado.ioloop import IOLoop
     from tornado.log import enable_pretty_logging
+    from tornado import autoreload
     enable_pretty_logging()
     http_server = HTTPServer(WSGIContainer(app))
     http_server.listen(args.port)
-    IOLoop.instance().start()
+    ioloop = IOLoop.instance()
+    # Auto-reload after modifying templates
+    autoreload.start()
+    ioloop.start()
   else:
     print('starting flask!')
     app.debug = False

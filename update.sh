@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd /root/arxiv-sanity-preserver
 python3 fetch_papers.py
 #python3 download_pdfs.py
 ./download_pdfs.sh
