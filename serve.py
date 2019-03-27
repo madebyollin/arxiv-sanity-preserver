@@ -127,7 +127,7 @@ def papers_from_library():
     uid = session['user_id']
     user_library = query_db('''select * from library where user_id = ?''', [uid])
     libids = [strip_version(x['paper_id']) for x in user_library]
-    out = [db[x] for x in libids]
+    out = [db[x] for x in libids if x in db]
     out = sorted(out, key=lambda k: k['updated'], reverse=True)
   return out
 
