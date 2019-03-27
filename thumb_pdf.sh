@@ -47,7 +47,7 @@ process_pdf() {
     # if we use convert it does 2 gs calls and doesn't give us all of the flags
     # timeout 5 convert "$pdf_path[0-7]" -quality 0 -sample x156 "$tmp_thumb_path.png"
     # let's use gs directly
-    timeout 5 gs -dLastPage=7 -dInterpolateControl=0 -dTextAlphaBits=1 -dGraphicsAlphaBits=1 -dNOTRANSPARENCY -dQUIET -dDEVICEHEIGHTPOINTS=156 -dPDFFitPage=true -sDEVICE=png16m -o ${tmp_thumb_path}-%d.png "$pdf_path"
+    timeout 15 gs -dLastPage=8 -dInterpolateControl=0 -dTextAlphaBits=4 -dGraphicsAlphaBits=2 -dNOTRANSPARENCY -dQUIET -dDEVICEWIDTHPOINTS=120 -dDEVICEHEIGHTPOINTS=156 -r72 -dFIXEDMEDIA -dFitPage -sDEVICE=png16m -o ${tmp_thumb_path}-%d.png "$pdf_path"
     # gs uses satanic indexing
     if [ ! -f "${tmp_thumb_path}-1.png" ]; then
        # conversion failed, use missing image
