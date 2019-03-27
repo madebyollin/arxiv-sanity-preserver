@@ -183,7 +183,7 @@ h1 {
 
 #userinfo {
 	position: absolute;
-	top: 10px;
+	top: 5px;
 	right: 150px;
 	color: white;
 	font-size: 16px;
@@ -192,12 +192,31 @@ h1 {
 	border: none;
 	padding: 4px;
 	width: 100px;
+    padding: 4px 16px;
+    border-radius: 16px;
+    margin-right: 1em;
+    font-size: inherit;
+    font-family: inherit;
 }
+
+.btn-fancy:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .btn-fancy {
-	background-color: #FFF;
-	border: none;
-	padding: 4px;
-	cursor: pointer;
+    font-family: inherit;
+    font-size: inherit; 
+    display: inline-block;
+    user-select: none;
+    margin-top: -8px;
+    margin-left: 8px;
+    border:0;
+    background: #2080ff;
+    color: white;
+    padding: 4px 16px;
+    transition: 0.1s ease transform;
+    border-radius: 16px;
 }
 
 #userinfo a {

@@ -184,11 +184,11 @@ $(document).ready(function(){
   <div id="userinfo">
     {% if not g.user %}
     <form action="{{ url_for('login') }}" method="post">
-      User:
-      <input type="text" name="username" class="input-no-border">
-      Pass:
-      <input type="password" name="password" class="input-no-border">
-      <input type="submit" value="Login or Create" class="btn-fancy">
+      user:
+      <input type="text" name="username" class="input-no-border" autocomplete="username">
+      pass:
+      <input type="password" name="password" class="input-no-border" autocomplete="current-password">
+      <input type="submit" value="log in / sign up" class="btn-fancy">
     </form>
     {% else %}
     {{ g.user.username }}
