@@ -28,7 +28,7 @@ files = os.listdir(Config.pdf_dir)
 for i,f in enumerate(files): # there was a ,start=1 here that I removed, can't remember why it would be there. shouldn't be, i think.
     txt_basename = f + '.txt'
     if txt_basename in have:
-        console.info('%d/%d skipping %s, already exists.' % (i, len(files), txt_basename, ))
+        # console.info('%d/%d skipping %s, already exists.' % (i, len(files), txt_basename, ))
         continue
 
     pdf_path = os.path.join(Config.pdf_dir, f)
