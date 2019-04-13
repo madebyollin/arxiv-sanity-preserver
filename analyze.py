@@ -32,7 +32,7 @@ for pid,j in db.items():
     if len(txt) > 1000 and len(txt) < 500000: # 500K is VERY conservative upper bound
       txt_paths.append(txt_path) # todo later: maybe filter or something some of them
       pids.append(idvv)
-      print("read %d/%d (%s) with %d chars" % (n, len(db), idvv, len(txt)))
+      # print("read %d/%d (%s) with %d chars" % (n, len(db), idvv, len(txt)))
     else:
       console.warn("skipped %d/%d (%s) with %d chars: suspicious!" % (n, len(db), idvv, len(txt)))
   else:
