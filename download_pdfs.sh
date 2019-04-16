@@ -12,4 +12,4 @@ get_config_var() {
 tmp_list="/tmp/papers_to_download.txt"
 download_dir=$(get_config_var pdf_dir)
 list_new_papers > "$tmp_list"
-aria2c -i "$tmp_list" -d "$download_dir" --auto-file-renaming false
+aria2c -i "$tmp_list" -d "$download_dir" --auto-file-renaming false -j 5 --max-overall-download-limit 1M
