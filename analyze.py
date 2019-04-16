@@ -87,7 +87,7 @@ train_txt_paths = list(txt_paths)  # duplicate
 shuffle(train_txt_paths)  # shuffle
 train_txt_paths = train_txt_paths[: min(len(train_txt_paths), max_train)]  # crop
 print("training on %d documents..." % (len(train_txt_paths),))
-train_corpus = make_corpus(train_txt_paths, max_chars=1e7)
+train_corpus = make_corpus(train_txt_paths, max_chars=1e6)
 print("created corpus")
 # oom killer was here
 v.fit(train_corpus)
